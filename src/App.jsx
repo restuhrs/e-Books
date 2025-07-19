@@ -16,15 +16,6 @@ function App() {
     localStorage.setItem('books', JSON.stringify(books))
   }, [books])
 
-  // useEffect(() => {
-  //   const sampleBooks = [
-  //     { title: "Hujan", author: "Tere Liye" },
-  //     { title: "Atomic Habits", author: "James Clear" },
-  //     { title: "How to Win Friends and Influence People", author: "Dale Carnegie" },
-  //   ]
-  //   setBooks(sampleBooks)
-  // }, [])
-
   const addBook = (book) => {
     setBooks([...books, book])
   }
