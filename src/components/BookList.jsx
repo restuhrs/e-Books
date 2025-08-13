@@ -1,8 +1,10 @@
 import { Trash2 } from "lucide-react";
+import { Info } from "lucide-react";
+import { Edit } from "lucide-react";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 
-function BookList({ books, onDelete }) {
+function BookList({ books, onDelete, onEdit, onView }) {
   const handleDelete = (id) => {
     Swal.fire({
       title: "Yakin ingin menghapus?",
@@ -35,9 +37,7 @@ function BookList({ books, onDelete }) {
   return (
     <div className="container mx-auto py-8">
       {books.length === 0 ? (
-        <p className="text-gray-500 text-center italic">
-          Belum ada buku, tambahkan dulu.
-        </p>
+        <p className="text-gray-500 text-center italic">Belum ada buku.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {books.map((book) => (
@@ -56,7 +56,7 @@ function BookList({ books, onDelete }) {
               />
 
               {/* Konten */}
-              <div className="p-5 flex flex-col justify-between h-full">
+              <div className="p-5 flex flex-col justify-between h-full ">
                 <div>
                   <h3 className="font-semibold text-lg text-gray-800 line-clamp-2">
                     {book.title}
@@ -64,6 +64,24 @@ function BookList({ books, onDelete }) {
                   <p className="text-sm text-slate-600">{book.author}</p>
                   <p className="text-xs text-gray-400 mt-1">Kode: {book.id}</p>
                 </div>
+
+                {/* Tombol Detail */}
+                <button
+                  onClick={() => onView(book)}
+                  className="absolute bottom-4 right-28 p-2 bg-blue-100 text-blue-600 rounded-full shadow-md"
+                  title="Detail Buku"
+                >
+                  <Info size={18} />
+                </button>
+
+                {/* Tombol Edit */}
+                <button
+                  onClick={() => onEdit(book)}
+                  className="absolute bottom-4 right-16 p-2 bg-yellow-100 text-yellow-600 rounded-full shadow-md"
+                  title="Edit Buku"
+                >
+                  <Edit size={18} />
+                </button>
 
                 {/* Tombol Hapus */}
                 <button
