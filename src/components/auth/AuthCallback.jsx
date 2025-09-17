@@ -1,6 +1,7 @@
+import { Loader2 } from "lucide-react";
 import { useEffect } from "react";
-import { supabase } from "@/config/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/config/supabaseClient";
 
 export default function AuthCallback() {
   const navigate = useNavigate();
@@ -15,5 +16,9 @@ export default function AuthCallback() {
     handleCallback();
   }, [navigate]);
 
-  return <p className="text-center mt-10">Menyelesaikan login...</p>;
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <Loader2 className="w-8 h-8 animate-spin text-amber-500" />
+    </div>
+  );
 }
