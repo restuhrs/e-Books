@@ -62,7 +62,6 @@ function EditBookModal({ book, onClose, onUpdate }) {
       }
 
       const updatedBook = {
-        ...book,
         title,
         author,
         description,
@@ -70,10 +69,22 @@ function EditBookModal({ book, onClose, onUpdate }) {
         file_url: fileUrl,
       };
 
-      onUpdate(updatedBook);
+      // update ke Supabase
+      const { data, error } = await supabase
+        .from("books")
+        .update(updatedBook)
+        .eq("kode_buku", book.kode_buku)
+        .select()
+        .single();
+
+      if (error) throw error;
+
+      // update state di frontend
+      onUpdate(data);
       onClose();
     } catch (err) {
       alert("Gagal memperbarui: " + err.message);
+      console.error("Update error:", err);
     } finally {
       setLoading(false);
     }

@@ -50,14 +50,12 @@ function BookList({ books, onEdit, onView, onDelete }) {
               key={book.kode_buku}
               className="bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col"
             >
-              {/* Gambar */}
               <img
                 src={book.image_url || "/no_cover.png"}
                 alt={book.title}
                 className="w-full h-56 object-cover bg-gray-100 rounded-t-xl"
               />
 
-              {/* Konten */}
               <div className="p-4 flex flex-col flex-grow">
                 <h3 className="font-semibold text-lg text-gray-800 line-clamp-2">
                   {book.title}
@@ -67,7 +65,6 @@ function BookList({ books, onEdit, onView, onDelete }) {
                   Kode: {book.kode_buku}
                 </p>
 
-                {/* Toolbar Aksi */}
                 <div className="flex justify-end gap-2 mt-4">
                   <button
                     onClick={() => onView(book)}
