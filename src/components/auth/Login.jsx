@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Login() {
   const { user } = useAuth();
+  console.log("Redirect to:", import.meta.env.VITE_SITE_URL);
 
   if (user) return <Navigate to="/" replace />;
 
@@ -20,8 +21,8 @@ export default function Login() {
       provider: "google",
       options: { redirectTo: `${import.meta.env.VITE_SITE_URL}/auth/callback` },
     });
+
     if (error) console.error("Login error:", error.message);
-    console.log("Redirect to:", import.meta.env.VITE_SITE_URL);
   };
 
   return (
