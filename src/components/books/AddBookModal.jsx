@@ -80,7 +80,7 @@ function AddBookModal({ onClose, onAdd }) {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl relative max-h-screen overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-6 py-4 rounded-t-lg">
+        <div className="flex items-center justify-between bg-gradient-to-r from-amber-600 to-yellow-500 text-white px-6 py-4 rounded-t-lg">
           <h2 className="text-xl font-semibold">Tambah Buku</h2>
           <button
             onClick={onClose}
@@ -135,11 +135,11 @@ function AddBookModal({ onClose, onAdd }) {
               }}
               onDragLeave={() => setDragActive(false)}
               className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer ${
-                dragActive ? "border-amber-500 bg-amber-50" : "border-gray-300"
+                dragActive ? "border-amber-600 bg-amber-50" : "border-gray-300"
               }`}
               onClick={() => document.getElementById("imageInput").click()}
             >
-              <Upload className="mx-auto text-amber-500 mb-2" size={40} />
+              <Upload className="mx-auto text-amber-600 mb-2" size={40} />
               <p className="text-gray-400">
                 {dragActive
                   ? "Lepaskan gambar di sini..."
@@ -163,7 +163,7 @@ function AddBookModal({ onClose, onAdd }) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white py-2 rounded-lg hover:shadow-lg transition-all flex justify-center items-center"
+              className="w-full bg-gradient-to-r from-amber-600 to-yellow-500 text-white py-2 rounded-lg hover:shadow-lg transition-all flex justify-center items-center"
             >
               {loading ? (
                 <svg

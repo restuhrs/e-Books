@@ -108,7 +108,7 @@ export default function Dashboard() {
         <div className="container mx-auto px-4 mb-4 flex justify-end">
           <button
             onClick={() => setIsAddOpen(true)}
-            className="bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-5 py-3 rounded-full font-semibold shadow hover:shadow-lg"
+            className="bg-gradient-to-r from-amber-600 to-yellow-500 text-white px-5 py-3 rounded-2xl font-semibold shadow hover:shadow-lg"
           >
             Tambah Buku
           </button>

@@ -17,7 +17,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-gradient-to-r from-amber-500 to-yellow-400 text-white shadow">
+    <header className="bg-gradient-to-r from-amber-600 to-yellow-500 text-white shadow">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-2xl sm:text-3xl font-bold">ReadSpace</h1>
@@ -26,7 +26,7 @@ export default function Header() {
         <div className="hidden sm:flex items-center gap-4">
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 bg-red-500 hover:bg-red-600 px-3 py-2 rounded-lg shadow transition-colors duration-200"
+            className="flex items-center gap-2 bg-red-500 hover:bg-red-600 px-3 py-2 rounded-xl shadow transition-colors duration-200"
           >
             <LogOut size={20} />
             <span className="font-semibold">Logout</span>
