@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "../../config/supabaseClient";
 import { Upload, X } from "lucide-react";
 
@@ -76,8 +76,15 @@ function AddBookModal({ onClose, onAdd }) {
     }
   };
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start z-50 overflow-y-auto">
+    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-start z-50 overflow-y-auto">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl relative max-h-[90vh] overflow-y-auto mt-10">
         {/* Header */}
         <div className="flex items-center justify-between bg-gradient-to-r from-amber-600 to-yellow-500 text-white px-6 py-4 rounded-t-lg">
