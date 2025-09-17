@@ -94,7 +94,7 @@ function EditBookModal({ book, onClose, onUpdate }) {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl relative max-h-screen overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between bg-gradient-to-r from-blue-500 to-teal-400 text-white px-6 py-4 rounded-t-lg">
+        <div className="flex items-center justify-between bg-gradient-to-r from-amber-500 to-yellow-400 text-white px-6 py-4 rounded-t-lg">
           <h2 className="text-xl font-semibold">Edit Buku</h2>
           <button
             onClick={onClose}
@@ -147,7 +147,7 @@ function EditBookModal({ book, onClose, onUpdate }) {
                     href={book.file_url}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm text-blue-500 underline"
+                    className="text-sm text-amber-500 underline"
                   >
                     Lihat File
                   </a>
@@ -162,11 +162,11 @@ function EditBookModal({ book, onClose, onUpdate }) {
               }}
               onDragLeave={() => setDragActive(false)}
               className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer ${
-                dragActive ? "border-blue-500 bg-blue-50" : "border-gray-300"
+                dragActive ? "border-amber-500 bg-amber-50" : "border-gray-300"
               }`}
               onClick={() => document.getElementById("editImageInput").click()}
             >
-              <Upload className="mx-auto text-blue-500 mb-2" size={40} />
+              <Upload className="mx-auto text-amber-500 mb-2" size={40} />
               <p className="text-gray-400">
                 {dragActive
                   ? "Lepaskan gambar di sini..."
@@ -190,7 +190,7 @@ function EditBookModal({ book, onClose, onUpdate }) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-blue-500 to-teal-400 text-white py-2 rounded-lg hover:shadow-lg transition-all flex justify-center items-center"
+              className="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-white py-2 rounded-lg hover:shadow-lg transition-all flex justify-center items-center"
             >
               {loading ? (
                 <svg

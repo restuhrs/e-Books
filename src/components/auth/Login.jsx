@@ -30,7 +30,7 @@ export default function Login() {
 
   return (
     <div className="relative flex items-center justify-center h-screen bg-gradient-to-br from-stone-100 via-stone-200 to-stone-300">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-20" />
+      <div className="absolute inset-0 bg-[url('/bg_login.png')] bg-cover bg-center opacity-20" />
 
       <Card className="relative w-[380px] shadow-xl backdrop-blur-sm border border-stone-300">
         <CardHeader className="text-center">
