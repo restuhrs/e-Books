@@ -11,9 +11,8 @@ import {
 import { Button } from "@/components/ui/button";
 
 export default function Login() {
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
 
-  if (loading) return <p>Loading...</p>;
   if (user) return <Navigate to="/" replace />;
 
   const signInWithGoogle = async () => {
@@ -22,6 +21,7 @@ export default function Login() {
       options: { redirectTo: `${import.meta.env.VITE_SITE_URL}/auth/callback` },
     });
     if (error) console.error("Login error:", error.message);
+    console.log("Redirect to:", import.meta.env.VITE_SITE_URL);
   };
 
   return (
