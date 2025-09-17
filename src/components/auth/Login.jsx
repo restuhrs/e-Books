@@ -36,7 +36,7 @@ export default function Login() {
         <CardHeader className="text-center">
           <div className="flex justify-center mb-2">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/29/29302.png"
+              src="/logo_buku.png"
               alt="Logo"
               className="h-20 w-20 rounded-lg shadow-md bg-white p-2"
             />
