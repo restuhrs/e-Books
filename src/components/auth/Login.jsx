@@ -17,9 +17,12 @@ export default function Login() {
   if (user) return <Navigate to="/" replace />;
 
   const signInWithGoogle = async () => {
+    const redirectTo = `${import.meta.env.VITE_SITE_URL}/auth/callback`;
+    console.log("Redirect to:", redirectTo);
+
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${import.meta.env.VITE_SITE_URL}/auth/callback` },
+      options: { redirectTo },
     });
 
     if (error) console.error("Login error:", error.message);
